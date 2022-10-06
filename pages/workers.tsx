@@ -90,12 +90,12 @@ const Workers: NextPage = () => {
                                 Maintenance mode{" "}
                                 <strong
                                     style={{
-                                        color: worker.maintenance
+                                        color: worker.maintenance_mode
                                             ? theme.palette.error.main
                                             : theme.palette.success.main,
                                     }}
                                 >
-                                    {worker.maintenance ? "on" : "off"}
+                                    {worker.maintenance_mode ? "on" : "off"}
                                 </strong>
                             </Typography>
                         </CardContent>

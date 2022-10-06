@@ -10,9 +10,10 @@ import {
 import humanizeDuration from "humanize-duration";
 import type { NextPage } from "next";
 import React from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import useSWR from "swr";
 
+import { loggedInAtom } from "../../atoms/login";
 import { myWorkersAtom } from "../../atoms/workers";
 import api from "../../lib/api";
 
@@ -20,6 +21,7 @@ const SavedWorkers: NextPage = () => {
     const theme = useTheme();
     const [myWorkers, setMyWorkers] = useRecoilState(myWorkersAtom);
     const [updateTimestamp, setUpdateTimestamp] = React.useState(Date.now());
+    const loggedIn = useRecoilValue(loggedInAtom);
     const [time, setTime] = React.useState(Date.now());
     const { data } = useSWR("/workers", async (path) => {
         const res = await api.get(path);
@@ -93,12 +95,12 @@ const SavedWorkers: NextPage = () => {
                                     Maintenance mode{" "}
                                     <strong
                                         style={{
-                                            color: worker.maintenance
+                                            color: worker.maintenance_mode
                                                 ? theme.palette.error.main
                                                 : theme.palette.success.main,
                                         }}
                                     >
-                                        {worker.maintenance ? "on" : "off"}
+                                        {worker.maintenance_mode ? "on" : "off"}
                                     </strong>
                                 </Typography>
                             </CardContent>
@@ -116,6 +118,21 @@ const SavedWorkers: NextPage = () => {
                                     }}
                                 >
                                     Unsave Worker
+                                </Button>
+                                <Button
+                                    size="small"
+                                    disabled={!loggedIn}
+                                    onClick={() => {
+                                        setMyWorkers((myWorkers) => {
+                                            const newMyWorkers = {
+                                                ...myWorkers,
+                                            };
+                                            delete newMyWorkers[worker.id];
+                                            return newMyWorkers;
+                                        });
+                                    }}
+                                >
+                                    Configure
                                 </Button>
                             </CardActions>
                         </Card>
