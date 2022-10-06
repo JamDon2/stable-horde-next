@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.group > *:not(:last-child) {
+    margin-right: 10px;
+}

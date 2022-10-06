@@ -1,0 +1,12 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+}
+
+.container > *:not(:last-child) {
+    margin-right: 10px;
+}
