@@ -12,3 +12,10 @@
 .group > *:not(:last-child) {
     margin-right: 10px;
 }
+
+.title {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    user-select: none;
+}
