@@ -1,33 +1,35 @@
 {
-  "name": "stable-horde-next",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
-    "@mui/icons-material": "^5.10.6",
-    "@mui/material": "^5.10.8",
-    "@types/humanize-duration": "^3.27.1",
-    "axios": "^1.0.0",
-    "humanize-duration": "^3.27.3",
-    "next": "12.3.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "recoil": "^0.7.5",
-    "swr": "^1.3.0"
-  },
-  "devDependencies": {
-    "@types/node": "18.8.2",
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.6",
-    "eslint": "8.24.0",
-    "eslint-config-next": "12.3.1",
-    "typescript": "4.8.4"
-  }
+    "name": "stable-horde-next",
+    "version": "0.1.0",
+    "private": true,
+    "author": "JamDon2",
+    "license": "AGPL-3.0",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.10.4",
+        "@emotion/styled": "^11.10.4",
+        "@mui/icons-material": "^5.10.6",
+        "@mui/material": "^5.10.8",
+        "@types/humanize-duration": "^3.27.1",
+        "axios": "^1.0.0",
+        "humanize-duration": "^3.27.3",
+        "next": "12.3.1",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "recoil": "^0.7.5",
+        "swr": "^1.3.0"
+    },
+    "devDependencies": {
+        "@types/node": "18.8.2",
+        "@types/react": "18.0.21",
+        "@types/react-dom": "18.0.6",
+        "eslint": "8.24.0",
+        "eslint-config-next": "12.3.1",
+        "typescript": "4.8.4"
+    }
 }
