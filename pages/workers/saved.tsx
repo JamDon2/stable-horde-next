@@ -110,13 +110,12 @@ const SavedWorkers: NextPage = () => {
                                             const newMyWorkers = {
                                                 ...myWorkers,
                                             };
-                                            newMyWorkers[worker.id] = worker;
+                                            delete newMyWorkers[worker.id];
                                             return newMyWorkers;
                                         });
                                     }}
-                                    disabled={Boolean(myWorkers[worker.id])}
                                 >
-                                    Save Worker
+                                    Unsave Worker
                                 </Button>
                             </CardActions>
                         </Card>
