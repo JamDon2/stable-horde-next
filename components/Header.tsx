@@ -18,7 +18,7 @@ export default function Header() {
                         <Button variant="outlined">All workers</Button>
                     </Link>
                     <Link href="/workers/saved">
-                        <Button variant="outlined">Your workers</Button>
+                        <Button variant="outlined">My workers</Button>
                     </Link>
                 </div>
                 <div className={styles.group}>
