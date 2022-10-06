@@ -12,7 +12,7 @@ export default function APILogin() {
     const [error, setError] = useRecoilState(apiErrorAtom);
 
     const handleAPIKeyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setAPIKey(event.target.value /*.replace(/[^a-zA-Z0-9]/g, "")*/);
+        setAPIKey(event.target.value.replace(/[^A-Za-z0-9_-]/g, ""));
     };
 
     const checkLogin = async () => {
@@ -42,6 +42,7 @@ export default function APILogin() {
                 type="password"
                 error={Boolean(error)}
                 label="API Key"
+                value={apikey}
                 onChange={handleAPIKeyChange}
                 variant="filled"
             />
