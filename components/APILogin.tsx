@@ -1,6 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import React from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 
 import { apiErrorAtom, apikeyAtom, loggedInAtom } from "../atoms/login";
 import api from "../lib/api";
@@ -8,7 +8,7 @@ import styles from "./APILogin.module.css";
 
 export default function APILogin() {
     const [apikey, setAPIKey] = useRecoilState(apikeyAtom);
-    const [loggedIn, setLoggedIn] = useRecoilState(loggedInAtom);
+    const setLoggedIn = useSetRecoilState(loggedInAtom);
     const [error, setError] = useRecoilState(apiErrorAtom);
 
     const handleAPIKeyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
