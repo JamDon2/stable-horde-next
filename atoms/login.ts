@@ -14,3 +14,8 @@ export const apikeyAtom = atom<string>({
     key: "apiKey",
     default: "",
 });
+
+export const usernameAtom = atom<string>({
+    key: "username",
+    default: "",
+});
